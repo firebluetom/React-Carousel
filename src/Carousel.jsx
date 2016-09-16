@@ -1,4 +1,5 @@
 var React = require('react');
+var style = require('./styles/carousel.scss');
 
 var _onFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame;
 if (!_onFrame) { // fallback for timers when RAF not available
