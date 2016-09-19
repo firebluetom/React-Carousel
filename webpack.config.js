@@ -29,6 +29,7 @@ var loaders = [
   { test: /\.(png|jpg)$/,    loader: 'url?limit=8192' }
   ];
 
+process.env.NODE_ENV = 'production';
 
 module.exports = {
   entry: [

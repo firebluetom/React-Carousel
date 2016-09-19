@@ -4,7 +4,7 @@
   "description": "An image carousel built in ReactJS",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js --progress --profile --colors",
+    "build": "webpack --config webpack.config.js --progress --profile --colors ",
     "test": "jest",
     "lint": "eslint --ext='.js,.jsx' *.js src/**/*.jsx"
   },
