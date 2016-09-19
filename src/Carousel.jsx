@@ -173,10 +173,11 @@ var Carousel = React.createClass({
   },
 
   markItemActiveAtIndex: function (idx) {
+    var self = this;
     clearTimeout(this.activeItemTimeout);
     this.activeItemTimeout = setTimeout(function () {
-      this.setState({
-        activeIndex: idx || this.potentialSelectionIndex
+      self.setState({
+        activeIndex: idx || self.potentialSelectionIndex
       });
     }, 50);
   },
