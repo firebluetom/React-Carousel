@@ -41,6 +41,7 @@ var Carousel = React.createClass({
   },
 
   getInitialState: function () {
+    this.listeners = 0;
     var animationEnabled = true;
     if (this.props.animationEnabled === false) {
       animationEnabled = false;
@@ -67,10 +68,14 @@ var Carousel = React.createClass({
   },
 
   addScrollListenerOnChoicesContainer: function () {
+    this.listeners++;
+    console.log( 'add', this.listeners );
     this.carouselChoices.addEventListener('scroll', this.handleScroll);
   },
 
   removeScrollListenerFromChoicesContainer: function () {
+    this.listeners--;
+    console.log( 'rem', this.listeners );
     this.carouselChoices.removeEventListener('scroll', this.handleScroll);
   },
 

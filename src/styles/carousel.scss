@@ -35,7 +35,7 @@
     border-radius: 10px;
     text-align: center;
     position: relative;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    //box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
   }
 
   &.closed {
@@ -77,7 +77,7 @@
     white-space: nowrap;
     overflow-y: hidden;
     overflow: auto;
-
+    transform: translateZ(0);
     .carousel-selector-option {
       transition: opacity 300ms ease;
       display: inline-block;
@@ -85,6 +85,7 @@
       width: 70%;
       height: 100%;
       margin: 0 10px;
+      transform: translateZ(0);
 
       &:first-child {
         margin-left: 15%;
