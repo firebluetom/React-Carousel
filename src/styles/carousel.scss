@@ -4,6 +4,7 @@
   max-height: 500px;
   max-width: 500px;
   position: relative;
+  -webkit-overflow-scrolling: touch;
 
   .activator {
     font-weight: bold;

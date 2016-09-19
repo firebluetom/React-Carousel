@@ -78,14 +78,13 @@ var Carousel = React.createClass({
     var largest = 0;
     for (var i = 0; i < this.carouselChoices.children.length; i++) {
       var item = this.carouselChoices.children[ i ];
-      // var scale = 1 - (Math.abs(this.carouselChoices.scrollLeft - (item.offsetLeft - this.carouselChoices.offsetWidth * this.state.percentAwayFromLeftSideOfCarousel)) / this.carouselChoices.scrollWidth);
-      // item.style.transform = 'scaleY(' + scale + ')';
-      item.style.transform = 'scaleY(' + Math.random() + ')';
-      // if (scale > largest) {
-      //   largest = scale;
-      //   this.potentialSelectionIndex = i;
-      //   this.markItemActiveAtIndex(this.potentialSelectionIndex);
-      // }
+      var scale = 1 - (Math.abs(this.carouselChoices.scrollLeft - (item.offsetLeft - this.carouselChoices.offsetWidth * this.state.percentAwayFromLeftSideOfCarousel)) / this.carouselChoices.scrollWidth);
+      item.style.transform = 'scaleY(' + scale + ')';
+      if (scale > largest) {
+        largest = scale;
+        this.potentialSelectionIndex = i;
+        this.markItemActiveAtIndex(this.potentialSelectionIndex);
+      }
     }
   },
 
@@ -174,9 +173,12 @@ var Carousel = React.createClass({
   },
 
   markItemActiveAtIndex: function (idx) {
-    this.setState({
-      activeIndex: idx || this.potentialSelectionIndex
-    });
+    clearTimeout(this.activeItemTimeout);
+    this.activeItemTimeout = setTimeout(function () {
+      this.setState({
+        activeIndex: idx || this.potentialSelectionIndex
+      });
+    }, 50);
   },
 
   controlClick: function (idx, e) {
