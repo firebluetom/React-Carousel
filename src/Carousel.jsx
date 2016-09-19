@@ -57,9 +57,15 @@ var Carousel = React.createClass({
   },
 
   componentDidMount: function () {
+    var self = this;
     this.potentialSelectionIndex = 0;
-    this.calculateScale(); // run scale calculation and mark the correct item
     this.addScrollListenerOnChoicesContainer();
+    this.calculateScale(); // run scale calculation and mark the correct item
+    if (!document.styleSheets.length) { // in case the styles didn't load yet, re-calculate
+      setTimeout(function () {
+        self.calculateScale(); // run scale calculation and mark the correct item
+      });
+    }
   },
 
   componentWillUnmount: function () {
