@@ -41,7 +41,6 @@ var Carousel = React.createClass({
   },
 
   getInitialState: function () {
-    this.listeners = 0;
     var animationEnabled = true;
     if (this.props.animationEnabled === false) {
       animationEnabled = false;
@@ -68,14 +67,10 @@ var Carousel = React.createClass({
   },
 
   addScrollListenerOnChoicesContainer: function () {
-    this.listeners++;
-    console.log( 'add', this.listeners );
     this.carouselChoices.addEventListener('scroll', this.handleScroll);
   },
 
   removeScrollListenerFromChoicesContainer: function () {
-    this.listeners--;
-    console.log( 'rem', this.listeners );
     this.carouselChoices.removeEventListener('scroll', this.handleScroll);
   },
 
@@ -83,13 +78,14 @@ var Carousel = React.createClass({
     var largest = 0;
     for (var i = 0; i < this.carouselChoices.children.length; i++) {
       var item = this.carouselChoices.children[ i ];
-      var scale = 1 - (Math.abs(this.carouselChoices.scrollLeft - (item.offsetLeft - this.carouselChoices.offsetWidth * this.state.percentAwayFromLeftSideOfCarousel)) / this.carouselChoices.scrollWidth);
-      item.style.transform = 'scaleY(' + scale + ')';
-      if (scale > largest) {
-        largest = scale;
-        this.potentialSelectionIndex = i;
-        this.markItemActiveAtIndex(this.potentialSelectionIndex);
-      }
+      // var scale = 1 - (Math.abs(this.carouselChoices.scrollLeft - (item.offsetLeft - this.carouselChoices.offsetWidth * this.state.percentAwayFromLeftSideOfCarousel)) / this.carouselChoices.scrollWidth);
+      // item.style.transform = 'scaleY(' + scale + ')';
+      item.style.transform = 'scaleY(' + Math.random() + ')';
+      // if (scale > largest) {
+      //   largest = scale;
+      //   this.potentialSelectionIndex = i;
+      //   this.markItemActiveAtIndex(this.potentialSelectionIndex);
+      // }
     }
   },
 
