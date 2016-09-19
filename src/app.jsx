@@ -4,9 +4,9 @@ var React = require('react');
 var Carousel = require('./Carousel');
 
 var choices = [
-  'https://i.kinja-img.com/gawker-media/image/upload/ct0qwl2ybxh1db1tymi1.jpg',
-  'https://i.kinja-img.com/gawker-media/image/upload/xpflvzatualdizw6oznl.jpg',
-  'https://i.kinja-img.com/gawker-media/image/upload/yalsuyhmda9vxmwjt5cg.jpg'
+  'http://www.hercampus.com/sites/default/files/2013/02/27/topic-1350661050.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Small-city-symbol.svg/348px-Small-city-symbol.svg.png',
+  'http://innovativeprofessionaloffices.com/wp-content/uploads/2014/07/seo-for-small-business.jpg'
 ];
 
 ReactDOM.render(
