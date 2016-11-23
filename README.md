@@ -2,6 +2,8 @@
 
 This is a simple, no dependency carousel, built on just ReactJS.
 
+Demo: https://firebluetom.github.io/React-Carousel-Simple/
+
 ````
 var ReactDOM = require('react-dom');
 var React = require('react');
